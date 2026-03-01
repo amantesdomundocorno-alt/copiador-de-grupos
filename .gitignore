@@ -1,0 +1,23 @@
+# Ignorar pastas de ambiente virtual Python
+__pycache__/
+*.py[cod]
+*$py.class
+venv/
+env/
+.env
+
+# Ignorar o diretório com suas sessões e senhas
+# dados/
+dados/backups/
+dados/cache_topicos_*.json
+dados/midias_puladas.txt
+*.session-journal
+*.sqlite-wal
+*.sqlite-shm
+*.db-wal
+*.db-shm
+
+# Mas NÃO ignorar a base e as sessões essenciais
+!dados/copiador.db
+!dados/settings.json
+!dados/*.session

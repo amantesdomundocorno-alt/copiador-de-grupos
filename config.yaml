@@ -1,0 +1,121 @@
+# config.yaml
+# [S8] Arquivo de Configuração Centralizado
+# Edite este arquivo para ajustar comportamentos do programa
+
+# ================================
+# CONFIGURAÇÕES DE RETRY
+# ================================
+retry:
+  # Número máximo de tentativas antes de desistir
+  max_retries: 5
+  
+  # Delay base para backoff exponencial (segundos)
+  base_delay: 2.0
+  
+  # Delay máximo (segundos)
+  max_delay: 60.0
+  
+  # Base do cálculo exponencial
+  exponential_base: 2.0
+
+# ================================
+# CONFIGURAÇÕES DE REDE
+# ================================
+network:
+  # Timeout para conexão (segundos)
+  connection_timeout: 60
+  
+  # Timeout para operações de leitura (segundos)
+  read_timeout: 120
+  
+  # Intervalo para verificar conexão (segundos)
+  ping_interval: 30
+  
+  # Máximo de tentativas de reconexão
+  max_reconnect_attempts: 10
+
+# ================================
+# CONFIGURAÇÕES DE CÓPIA
+# ================================
+copy:
+  # Parar após N mensagens sem mídia consecutivas
+  max_messages_without_media: 1000
+  
+  # Mídias por tópico em fóruns
+  batch_size_forum: 50
+  
+  # Mídias por lote em grupos simples
+  batch_size_simple: 10
+  
+  # Limite de caracteres por mensagem
+  telegram_char_limit: 4000
+  
+  # Pausa mínima entre ações (segundos)
+  default_pause_min: 1.0
+  
+  # Pausa máxima entre ações (segundos)
+  default_pause_max: 3.0
+
+# ================================
+# CONFIGURAÇÕES DE BACKUP
+# ================================
+backup:
+  # Máximo de backups guardados
+  max_backups: 7
+  
+  # Diretório de backups
+  backup_dir: "dados/backups"
+  
+  # Criar backup automático ao iniciar
+  auto_backup_on_start: true
+
+# ================================
+# CONFIGURAÇÕES DE LOG
+# ================================
+log:
+  # Diretório de logs
+  log_dir: "dados/logs"
+  
+  # Tamanho máximo de cada arquivo (MB)
+  max_log_size_mb: 5
+  
+  # Número de arquivos de backup
+  backup_count: 3
+  
+  # Nível de log (DEBUG, INFO, WARNING, ERROR)
+  log_level: "INFO"
+  
+  # Mostrar logs no console
+  log_to_console: true
+
+# ================================
+# CONFIGURAÇÕES DE NOTIFICAÇÃO
+# ================================
+notifications:
+  # Habilitar notificações Telegram
+  enabled: true
+  
+  # Notificar sobre conclusão de tarefas
+  notify_on_complete: true
+  
+  # Notificar sobre erros críticos
+  notify_on_error: true
+  
+  # Notificar sobre reconexão
+  notify_on_reconnect: true
+  
+  # Intervalo mínimo entre notificações (segundos)
+  min_interval: 60
+
+# ================================
+# CONFIGURAÇÕES DE INTERFACE
+# ================================
+interface:
+  # Usar cores no terminal
+  use_colors: true
+  
+  # Mostrar banner no início
+  show_banner: true
+  
+  # Limpar tela entre menus
+  clear_screen: true
